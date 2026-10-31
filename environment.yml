@@ -1,0 +1,17 @@
+name: amr
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - scikit-learn
+  - xgboost
+  - shap
+  - biopython
+  - matplotlib
+  - seaborn
+  - jupyterlab
+  - pytest
+  - snakemake-minimal>=8

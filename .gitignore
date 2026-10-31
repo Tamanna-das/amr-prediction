@@ -1,0 +1,18 @@
+# Large or derived data: never commit
+data/genomes/
+data/amrfinder_db/
+data/metadata/*.txt
+data/metadata/*.tsv
+data/features/*
+!data/features/.gitkeep
+results/
+.snakemake/
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+
+# OS
+.DS_Store
