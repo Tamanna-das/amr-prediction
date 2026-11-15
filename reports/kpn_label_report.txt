@@ -1,0 +1,40 @@
+wrote 15,809 labels to data/metadata/kpn_labels.tsv
+
+genomes named K. pneumoniae but outside taxa ['573', '72407']: 324
+taxon_id                     genome_name
+ 1304918  Klebsiella pneumoniae 120_1020
+ 1304916  Klebsiella pneumoniae 140_1040
+ 1304917  Klebsiella pneumoniae 160_1080
+ 1304919  Klebsiella pneumoniae 280_1220
+ 1304920  Klebsiella pneumoniae 361_1301
+ 1304921  Klebsiella pneumoniae 440_1540
+ 1304922  Klebsiella pneumoniae 500_1420
+ 1304923  Klebsiella pneumoniae 540_1460
+ 1304924  Klebsiella pneumoniae 646_1568
+ 1328398   Klebsiella pneumoniae BIDMC 1
+ 1328404  Klebsiella pneumoniae BIDMC 10
+ 1328405  Klebsiella pneumoniae BIDMC 11
+ 1328406 Klebsiella pneumoniae BIDMC 12A
+ 1328407 Klebsiella pneumoniae BIDMC 12B
+ 1328408 Klebsiella pneumoniae BIDMC 12C
+
+# usable labels per drug (after taxa, conflict and intermediate filters)
+                                  n  resistant  susceptible
+antibiotic                                                 
+ciprofloxacin                  3817       2613         1204
+gentamicin                     4327       1721         2606
+meropenem                      4096       1442         2654
+trimethoprim/sulfamethoxazole  3569       2416         1153
+
+# genomes by number of drugs labelled (out of 4)
+1      94
+2     641
+3     751
+4    3045
+
+genomes labelled for all 4 drugs: 3,045
+R / S among those genomes:
+  meropenem: 939 R / 2106 S
+  ciprofloxacin: 2124 R / 921 S
+  gentamicin: 1152 R / 1893 S
+  trimethoprim/sulfamethoxazole: 1987 R / 1058 S

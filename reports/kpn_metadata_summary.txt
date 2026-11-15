@@ -1,0 +1,82 @@
+species filter: 'Klebsiella pneumoniae'
+rows: 112,682   unique genomes: 8,436
+rows with a measurement but no phenotype call: 38,179
+
+# taxon_id
+taxon_id
+573        84871
+72407      21746
+574         1574
+1128952       46
+1094170       23
+1094171       23
+1128946       23
+1128948       23
+1128950       23
+1128951       23
+1128953       23
+1087441       23
+1128954       23
+1168064       23
+1087443       23
+
+# resistant_phenotype
+resistant_phenotype
+resistant         45686
+NaN               38179
+susceptible       24994
+intermediate       3695
+nonsusceptible      128
+
+# laboratory_typing_method
+laboratory_typing_method
+Broth dilution    68005
+MIC               29423
+NaN                6001
+Disk diffusion     5900
+Agar dilution      3353
+
+# testing_standard
+testing_standard
+CLSI                                                     76252
+EUCAST                                                   20273
+NaN                                                      15025
+CLSI, EUCAST                                               668
+British Society for Antimicrobial Chemotherapy (BSAC)      371
+EUCAST,CLSI                                                 64
+missing                                                     29
+
+# source
+source
+NaN    112682
+
+# unique genomes per antibiotic x phenotype (top 25)
+resistant_phenotype               intermediate  nonsusceptible  resistant  susceptible  min_R_S
+antibiotic                                                                                     
+gentamicin                                 158               0       1763         2654     1763
+meropenem                                  161               0       1577         2661     1577
+ciprofloxacin                              118               0       2745         1210     1210
+trimethoprim/sulfamethoxazole               25               0       2536         1172     1172
+cefoxitin                                  242               0       1640         1124     1124
+imipenem                                    62               0       1092         1306     1092
+ceftazidime                                 94               0       2936          988      988
+tobramycin                                 399               0       1425          965      965
+piperacillin/tazobactam                    265               0       1876          871      871
+cefepime                                   262               0       1577          867      867
+tetracycline                               198               0        959          858      858
+amikacin                                   502               0        557         2658      557
+ertapenem                                   11               0       1303          505      505
+aztreonam                                   57               0       2413          478      478
+cefazolin                                    0               0       2103          428      428
+cefotaxime                                  36               0       1429          422      422
+ceftriaxone                                 66               0       2178          416      416
+levofloxacin                                42               0       1740          402      402
+colistin                                     1               0        338         1053      338
+tigecycline                                183               0        265          861      265
+ampicillin/sulbactam                       126               0       1775          246      246
+nitrofurantoin                             288               0        945          208      208
+amoxicillin/clavulanic acid                 29               0       1144          203      203
+extended spectrum beta lactamase             0               0        191          260      191
+trimethoprim                                 1               0        123          157      123
+
+# genome-antibiotic pairs with conflicting phenotypes: 58

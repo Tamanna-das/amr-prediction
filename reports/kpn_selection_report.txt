@@ -1,0 +1,31 @@
+wrote 1,200 genomes to data/metadata/selected_genomes.tsv and data/metadata/genome_ids.txt
+
+complete-label genomes in pool: 3,045
+
+# QC failures per rule (a genome can fail several)
+status      1
+length     39
+gc         27
+contigs    50
+failing any rule: 72   passing: 2,973
+after BioSample dedup: 2,966
+selected: 1,200
+
+# top bioprojects in the selection
+bioproject_accession
+PRJNA376414    360
+PRJEB27256     322
+PRJEB6891       82
+PRJEB22890      69
+PRJNA396774     63
+PRJNA288601     54
+PRJEB6574       53
+PRJEB1800       31
+PRJNA497126     24
+PRJNA278886     24
+
+# class balance per drug in the selection
+  meropenem: 359 R / 841 S
+  ciprofloxacin: 747 R / 453 S
+  gentamicin: 415 R / 785 S
+  trimethoprim/sulfamethoxazole: 712 R / 488 S

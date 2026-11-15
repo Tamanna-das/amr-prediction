@@ -16,3 +16,13 @@ __pycache__/
 
 # OS
 .DS_Store
+
+# The selected genome list is small and defines the dataset: commit it
+!data/metadata/selected_genomes.tsv
+!data/metadata/genome_ids.txt
+
+# Run logs and per-genome tool output
+logs/
+reports/*.log
+!data/metadata/selected_500.tsv
+!data/metadata/genome_ids_500.txt

@@ -1,0 +1,124 @@
+# AMR prediction from Klebsiella pneumoniae genomes.
+#
+# Run from the repo root.
+#   AMRFinderPlus only (default target):
+#       snakemake -s workflow/Snakefile --cores 6
+#   Whole pipeline, from genomes to results tables and figures:
+#       snakemake -s workflow/Snakefile --cores 6 report --config only_present=False
+#
+# Tools come from the project's conda envs (workflow/envs/*.yaml). Either put
+# their bin folders on PATH, or add --software-deployment-method conda
+# (Snakemake >= 8) to let Snakemake build them.
+import os
+
+IDS_FILE = config.get("ids", "data/metadata/genome_ids_500.txt")
+LABELS = config.get("labels", "data/metadata/selected_500.tsv")
+DB = config.get("amrfinder_db", "data/amrfinder_db/2026-08-07.1")
+LINEAGE_THRESHOLD = config.get("lineage_threshold", 0.005)
+ORGANISM = "Klebsiella_pneumoniae"
+
+IDS = [l.strip() for l in open(IDS_FILE) if l.strip()]
+# While genomes are still downloading, only schedule the ones on disk.
+if config.get("only_present", True):
+    IDS = [i for i in IDS if os.path.exists(f"data/genomes/{i}.fna")]
+
+GENOMES = expand("data/genomes/{id}.fna", id=IDS)
+REPORTS = expand("results/amrfinder/{id}.tsv", id=IDS)
+
+
+rule all:
+    input:
+        REPORTS
+
+
+rule report:
+    input:
+        "reports/per_drug_results.csv",
+        "reports/shap_top_features.csv",
+
+
+rule amrfinder:
+    input:
+        "data/genomes/{id}.fna"
+    output:
+        "results/amrfinder/{id}.tsv"
+    log:
+        "logs/amrfinder/{id}.log"
+    threads: 1
+    conda:
+        "envs/amrfinder.yaml"
+    shell:
+        "amrfinder -n {input} -O " + ORGANISM + " --plus -d " + DB +
+        " --threads {threads} --name {wildcards.id} -o {output} > {log} 2>&1"
+
+
+rule mash_sketch:
+    input:
+        GENOMES
+    output:
+        "results/mash/sketch.msh"
+    threads: 6
+    conda:
+        "envs/mash.yaml"
+    shell:
+        "mash sketch -p {threads} -o results/mash/sketch {input} > /dev/null 2>&1"
+
+
+rule mash_dist:
+    input:
+        "results/mash/sketch.msh"
+    output:
+        "results/mash/dist.tsv"
+    threads: 6
+    conda:
+        "envs/mash.yaml"
+    shell:
+        "mash dist -p {threads} {input} {input} > {output}"
+
+
+rule lineages:
+    input:
+        "results/mash/dist.tsv"
+    output:
+        "data/features/lineage_groups.tsv"
+    shell:
+        "python -m src.lineages --dist {input} --threshold " + str(LINEAGE_THRESHOLD) +
+        " --out {output} > reports/lineages.txt"
+
+
+rule matrix:
+    input:
+        REPORTS
+    output:
+        matrix="data/features/amr_matrix.tsv",
+        annotation="data/features/element_annotation.tsv",
+    shell:
+        "python -m src.build_matrix --ids " + IDS_FILE +
+        " --out {output.matrix} --annotation {output.annotation} > reports/matrix.txt"
+
+
+rule train:
+    input:
+        matrix="data/features/amr_matrix.tsv",
+        groups="data/features/lineage_groups.tsv",
+    output:
+        "reports/per_drug_results.csv",
+        "results/oof_predictions.tsv",
+    shell:
+        "python -m src.train --matrix {input.matrix} --groups {input.groups} "
+        "--labels " + LABELS + " --out {output[0]} --pred-out {output[1]} "
+        "> reports/train.txt"
+
+
+rule explain:
+    input:
+        matrix="data/features/amr_matrix.tsv",
+        groups="data/features/lineage_groups.tsv",
+        annotation="data/features/element_annotation.tsv",
+    output:
+        "reports/shap_top_features.csv",
+        "reports/figures/shap_top_features.png",
+    shell:
+        "python -m src.explain --matrix {input.matrix} --groups {input.groups} "
+        "--labels " + LABELS + " --annotation {input.annotation} "
+        "--out {output[0]} --figure {output[1]} > reports/explain.txt"

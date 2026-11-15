@@ -1,0 +1,64 @@
+wrote metadata for 4,531 genomes to data/metadata/kpn_genome_metadata.tsv
+
+labelled genomes: 4,531   found in genome_metadata: 4,531
+labelled for all 4 drugs: 3,045   found: 3,045
+duplicate genome_id rows in metadata: 0
+
+=== QC on the 3,045 complete-label genomes found in metadata ===
+
+# genome_status
+genome_status
+WGS           2968
+Complete        76
+Deprecated       1
+
+# antimicrobial_resistance_evidence
+antimicrobial_resistance_evidence
+AMR Panel    3045
+
+# sequencing_platform
+sequencing_platform
+NaN                     1687
+Illumina MiSeq           619
+Illumina NextSeq 500     154
+Illumina HiSeq X10       137
+Illumina HiSeq 2500      128
+Illumina HiSeq           111
+Illumina HiSeq2000        68
+PacBio RSII               33
+Illumina NextSeq          31
+Illumina HiSeq 2000       23
+
+# taxon_id
+taxon_id
+573      2932
+72407     113
+
+# numeric QC fields
+           contigs  genome_length   gc_content    patric_cds
+count  3045.000000   3.045000e+03  3045.000000   3045.000000
+mean    128.927422   5.541997e+06    57.163726   5522.921182
+std     177.904826   3.463246e+05     0.463596    422.328783
+min       1.000000   1.702100e+04    46.350000     46.000000
+1%        5.000000   5.111033e+06    56.340000   4964.760000
+5%       42.000000   5.264342e+06    56.609632   5145.200000
+50%      98.000000   5.507604e+06    57.230000   5479.000000
+95%     306.800000   5.860778e+06    57.510670   5922.800000
+99%     689.480000   6.114610e+06    57.686260   6581.400000
+max    5155.000000   1.114704e+07    59.673344  11674.000000
+
+# missing biosample_accession: 69
+# biosamples with >1 genome: 8 (16 genomes involved)
+
+# top bioprojects (study / outbreak concentration)
+bioproject_accession
+PRJNA376414    1370
+PRJEB27256      605
+PRJEB6891       162
+PRJNA396774     154
+PRJEB22890      137
+PRJNA288601     113
+PRJEB6574       100
+PRJEB1800        68
+PRJNA643814      47
+NaN              45
