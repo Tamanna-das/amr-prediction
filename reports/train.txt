@@ -1,0 +1,46 @@
+genomes: 500   features: 289   lineage groups: 131
+meropenem                       logreg grouped AUROC 0.951 [0.893-0.978]  F1 0.849  MCC 0.781
+meropenem                       logreg random  AUROC 0.964 [0.929-0.984]  F1 0.898  MCC 0.854
+meropenem                       rf     grouped AUROC 0.954 [0.918-0.978]  F1 0.840  MCC 0.781
+meropenem                       rf     random  AUROC 0.964 [0.943-0.984]  F1 0.857  MCC 0.794
+meropenem                       xgb    grouped AUROC 0.948 [0.895-0.974]  F1 0.833  MCC 0.756
+meropenem                       xgb    random  AUROC 0.967 [0.933-0.986]  F1 0.889  MCC 0.840
+ciprofloxacin                   logreg grouped AUROC 0.981 [0.952-0.993]  F1 0.954  MCC 0.878
+ciprofloxacin                   logreg random  AUROC 0.985 [0.957-0.995]  F1 0.962  MCC 0.898
+ciprofloxacin                   rf     grouped AUROC 0.977 [0.952-0.993]  F1 0.957  MCC 0.886
+ciprofloxacin                   rf     random  AUROC 0.988 [0.968-0.996]  F1 0.962  MCC 0.898
+ciprofloxacin                   xgb    grouped AUROC 0.975 [0.940-0.990]  F1 0.954  MCC 0.877
+ciprofloxacin                   xgb    random  AUROC 0.982 [0.949-0.993]  F1 0.954  MCC 0.876
+ciprofloxacin                   xgb    holdout AUROC 0.959  (n=146, R=40)
+gentamicin                      logreg grouped AUROC 0.955 [0.903-0.985]  F1 0.879  MCC 0.817
+gentamicin                      logreg random  AUROC 0.971 [0.939-0.990]  F1 0.928  MCC 0.887
+gentamicin                      rf     grouped AUROC 0.921 [0.833-0.980]  F1 0.753  MCC 0.607
+gentamicin                      rf     random  AUROC 0.968 [0.937-0.990]  F1 0.903  MCC 0.848
+gentamicin                      xgb    grouped AUROC 0.951 [0.869-0.987]  F1 0.836  MCC 0.736
+gentamicin                      xgb    random  AUROC 0.968 [0.928-0.988]  F1 0.930  MCC 0.892
+gentamicin                      xgb    holdout AUROC 0.981  (n=146, R=27)
+trimethoprim/sulfamethoxazole   logreg grouped AUROC 0.976 [0.962-0.986]  F1 0.924  MCC 0.824
+trimethoprim/sulfamethoxazole   logreg random  AUROC 0.977 [0.964-0.988]  F1 0.943  MCC 0.858
+trimethoprim/sulfamethoxazole   rf     grouped AUROC 0.972 [0.959-0.984]  F1 0.931  MCC 0.830
+trimethoprim/sulfamethoxazole   rf     random  AUROC 0.976 [0.961-0.987]  F1 0.933  MCC 0.833
+trimethoprim/sulfamethoxazole   xgb    grouped AUROC 0.972 [0.960-0.981]  F1 0.933  MCC 0.828
+trimethoprim/sulfamethoxazole   xgb    random  AUROC 0.972 [0.957-0.983]  F1 0.928  MCC 0.821
+trimethoprim/sulfamethoxazole   xgb    holdout AUROC 0.962  (n=146, R=48)
+
+wrote reports/per_drug_results.csv and results/oof_predictions.tsv
+
+# AUROC: random split minus lineage-grouped split
+validation                            grouped  random  inflation
+drug                          model                             
+ciprofloxacin                 logreg    0.981   0.985      0.004
+                              rf        0.977   0.988      0.011
+                              xgb       0.975   0.982      0.007
+gentamicin                    logreg    0.955   0.971      0.016
+                              rf        0.921   0.968      0.047
+                              xgb       0.951   0.968      0.017
+meropenem                     logreg    0.951   0.964      0.012
+                              rf        0.954   0.964      0.011
+                              xgb       0.948   0.967      0.020
+trimethoprim/sulfamethoxazole logreg    0.976   0.977      0.002
+                              rf        0.972   0.976      0.004
+                              xgb       0.972   0.972     -0.000

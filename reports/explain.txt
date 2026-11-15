@@ -1,0 +1,54 @@
+
+### meropenem  (shap 0.51.0 TreeExplainer)  top-10 with matching NCBI class: 3/10
+ rank        element  mean_abs_shap direction  prev_in_R  prev_in_S amr_subclass  ncbi_class_match
+    1       blaKPC-2          1.013 towards R      0.361      0.006   CARBAPENEM              True
+    2      parC_S80I          0.993 towards R      0.865      0.313    QUINOLONE             False
+    3       blaKPC-3          0.655 towards R      0.219      0.000   CARBAPENEM              True
+    4 ompK36_D135DGD          0.508 towards R      0.297      0.049   CARBAPENEM              True
+    5            ble          0.498 towards R      0.245      0.000    BLEOMYCIN             False
+    6           sul1          0.385 towards R      0.684      0.212  SULFONAMIDE             False
+    7          aadA2          0.365 towards R      0.516      0.101 STREPTOMYCIN             False
+    8       blaTEM-1          0.354 towards R      0.419      0.322  BETA-LACTAM             False
+    9          qnrS1          0.278 towards R      0.155      0.026    QUINOLONE             False
+   10    aph(3'')-Ib          0.236 towards R      0.265      0.322 STREPTOMYCIN             False
+
+### ciprofloxacin  (shap 0.51.0 TreeExplainer)  top-10 with matching NCBI class: 5/10
+ rank        element  mean_abs_shap direction  prev_in_R  prev_in_S                            amr_subclass  ncbi_class_match
+    1      parC_S80I          2.336 towards R      0.759      0.000                               QUINOLONE              True
+    2 aac(6')-Ib-cr5          0.747 towards R      0.373      0.033 AMIKACIN/KANAMYCIN/QUINOLONE/TOBRAMYCIN              True
+    3      gyrA_S83I          0.486 towards R      0.621      0.000                               QUINOLONE              True
+    4    blaCTX-M-15          0.387 towards R      0.661      0.094                           CEPHALOSPORIN             False
+    5       blaTEM-1          0.339 towards R      0.489      0.110                             BETA-LACTAM             False
+    6           sul1          0.327 towards R      0.511      0.088                             SULFONAMIDE             False
+    7      blaSHV-11          0.274 towards S      0.310      0.232                             BETA-LACTAM             False
+    8          qnrS1          0.253 towards R      0.091      0.022                               QUINOLONE              True
+    9      gyrA_S83F          0.246 towards R      0.150      0.000                               QUINOLONE              True
+   10           sul2          0.233 towards S      0.439      0.133                             SULFONAMIDE             False
+
+### gentamicin  (shap 0.51.0 TreeExplainer)  top-10 with matching NCBI class: 3/10
+ rank    element  mean_abs_shap direction  prev_in_R  prev_in_S                                  amr_subclass  ncbi_class_match
+    1 aac(3)-IIe          2.024 towards R      0.582      0.003                                    GENTAMICIN              True
+    2  parC_S80I          0.879 towards R      0.780      0.314                                     QUINOLONE             False
+    3 aac(3)-IId          0.628 towards R      0.121      0.009                                    GENTAMICIN              True
+    4       armA          0.536 towards R      0.220      0.009                                    GENTAMICIN              True
+    5      qnrB1          0.343 towards R      0.396      0.097                                     QUINOLONE             False
+    6     tet(A)          0.273 towards R      0.396      0.135                                  TETRACYCLINE             False
+    7   blaTEM-1          0.236 towards R      0.555      0.236                                   BETA-LACTAM             False
+    8       oqxA          0.229 towards S      0.934      0.874 NITROFURANTOIN/PHENICOL/QUINOLONE/TIGECYCLINE             False
+    9     blaTEM          0.227 towards R      0.181      0.028                                   BETA-LACTAM             False
+   10      aadA1          0.204 towards R      0.203      0.031                                  STREPTOMYCIN             False
+
+### trimethoprim/sulfamethoxazole  (shap 0.51.0 TreeExplainer)  top-10 with matching NCBI class: 4/10
+ rank     element  mean_abs_shap direction  prev_in_R  prev_in_S                                       amr_subclass  ncbi_class_match
+    1        sul1          1.176 towards R      0.551      0.065                                        SULFONAMIDE              True
+    2      dfrA14          1.127 towards R      0.485      0.045                                       TRIMETHOPRIM              True
+    3        sul2          1.012 towards R      0.525      0.030                                        SULFONAMIDE              True
+    4      mph(A)          0.397 towards R      0.352      0.005 AZITHROMYCIN/ERYTHROMYCIN/SPIRAMYCIN/TELITHROMYCIN             False
+    5      dfrA12          0.361 towards R      0.329      0.000                                       TRIMETHOPRIM              True
+    6 aph(3'')-Ib          0.324 towards R      0.475      0.045                                       STREPTOMYCIN             False
+    7      tet(A)          0.275 towards R      0.365      0.025                                       TETRACYCLINE             False
+    8   parC_S80I          0.236 towards R      0.678      0.191                                          QUINOLONE             False
+    9  aac(3)-IIe          0.217 towards R      0.319      0.055                                         GENTAMICIN             False
+   10       aadA2          0.217 towards R      0.362      0.030                                       STREPTOMYCIN             False
+
+wrote reports/shap_top_features.csv and reports/figures/shap_top_features.png

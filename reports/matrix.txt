@@ -1,0 +1,28 @@
+genomes: 500   AMR elements: 289
+genomes with zero AMR hits: 0
+AMR elements per genome: median 16, max 36
+
+# subtypes
+subtype
+AMR              193
+POINT_DISRUPT     65
+POINT             31
+
+# 15 most common elements
+            subtype                                   amr_class                                   amr_subclass  n_genomes
+element                                                                                                                  
+emrD            AMR                                      EFFLUX                                         EFFLUX        500
+fosA            AMR                                  FOSFOMYCIN                                     FOSFOMYCIN        467
+oqxA            AMR  NITROFURAN/PHENICOL/QUINOLONE/TETRACYCLINE  NITROFURANTOIN/PHENICOL/QUINOLONE/TIGECYCLINE        448
+oqxB            AMR  NITROFURAN/PHENICOL/QUINOLONE/TETRACYCLINE  NITROFURANTOIN/PHENICOL/QUINOLONE/TIGECYCLINE        251
+parC_S80I     POINT                                   QUINOLONE                                      QUINOLONE        242
+blaCTX-M-15     AMR                                 BETA-LACTAM                                  CEPHALOSPORIN        228
+gyrA_S83I     POINT                                   QUINOLONE                                      QUINOLONE        198
+sul1            AMR                                 SULFONAMIDE                                    SULFONAMIDE        179
+blaTEM-1        AMR                                 BETA-LACTAM                                    BETA-LACTAM        176
+sul2            AMR                                 SULFONAMIDE                                    SULFONAMIDE        164
+dfrA14          AMR                                TRIMETHOPRIM                                   TRIMETHOPRIM        155
+aph(3'')-Ib     AMR                              AMINOGLYCOSIDE                                   STREPTOMYCIN        152
+aph(6)-Id       AMR                              AMINOGLYCOSIDE                                   STREPTOMYCIN        152
+blaSHV-11       AMR                                 BETA-LACTAM                                    BETA-LACTAM        141
+catB3           AMR                                    PHENICOL                                CHLORAMPHENICOL        129

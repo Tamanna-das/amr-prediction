@@ -1,0 +1,13 @@
+genomes: 500
+pairwise distance: median 0.0111, pairs < 0.0001 (near-identical): 86
+
+# groups at each threshold
+ threshold  n_groups  largest_group  largest_share  singletons
+    0.0005       337             29          0.058         291
+    0.0010       300             54          0.108         255
+    0.0025       219             78          0.156         173
+    0.0050       131             84          0.168          90
+    0.0100        14            480          0.960           9
+    0.0200         3            484          0.968           0
+
+wrote 131 lineage groups at threshold 0.005 to data/features/lineage_groups.tsv

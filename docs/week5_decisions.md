@@ -59,7 +59,7 @@ contigs up to 689).
 | gc_content | 56.0 to 58.0 % |
 | contigs | 500 or fewer |
 
-Genomes failing each rule: [fill in from `reports/kpn_selection_report.txt`].
+Genomes failing each rule: status 1, length 39, GC 27, contigs 50 (72 fail any rule; 2,973 pass).
 
 ## Leakage controls at this stage
 
@@ -72,5 +72,11 @@ Genomes failing each rule: [fill in from `reports/kpn_selection_report.txt`].
 
 ## Sample
 
-1,200 genomes, random with seed 42, from genomes passing QC and dedup.
-Class balance per drug in the final sample: [fill in from the selection report].
+500 genomes, random with seed 42, at most 150 per BioProject, from the 2,966 genomes passing QC and dedup (reduced from a planned 1,200 because of AMRFinderPlus run time).
+
+| Drug | R | S |
+|---|---|---|
+| meropenem | 155 | 345 |
+| ciprofloxacin | 319 | 181 |
+| gentamicin | 182 | 318 |
+| trimethoprim/sulfamethoxazole | 301 | 199 |
