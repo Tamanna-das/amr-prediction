@@ -1,4 +1,4 @@
-# Week 5 decisions: data scope, labels and genome selection
+# decisions: data scope, labels and genome selection
 
 All counts below come from files downloaded on 2026-10-31. Re-running the
 pipeline on a later BV-BRC release will change them.
